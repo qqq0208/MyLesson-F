@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: ml-user
+  cloud:
+    nacos:
+      config:
+        file-extension: yaml
+        server-addr: 192.168.48.130:8848
+        group: ml-group
+        # 配置加载Naocs中通用配置文件
+        shared-configs:
+          - group: ml-group #配置文件分组
+            data-id: common-config.yaml #配置文件名字
+            refresh: true  #是否动态刷新 默认为false
+  profiles:
+    active: dev
